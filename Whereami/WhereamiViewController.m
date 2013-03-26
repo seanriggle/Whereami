@@ -29,13 +29,33 @@
     return self;
 }
 
+- (void) dealloc
+{
+    //Tell the location manager to stop sending us a message
+    [locationManager setDelegate:nil];
+}
+
 - (void)locationManager:(CLLocationManager *)manager
             didUpdateToLocation:(CLLocation *)newLocation
-                fromLocation:(CLLocation *)oldLocation{
+                fromLocation:(CLLocation *)oldLocation
+{
     double lat = [newLocation coordinate].latitude;
     double lon = [newLocation coordinate].longitude;
     
     NSLog(@"%f, %f", lat,lon);
 }
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error
+{
+    NSLog(@"Could not find location: %@", error);
+}
+
+//- (void) doSomethingWeird
+//{
+//    NSLog(@"Line 1");
+//    NSLog(@"Line 2");
+//    NSLog(@"Line 3");
+//}
 
 @end
