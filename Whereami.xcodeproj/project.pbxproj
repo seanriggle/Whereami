@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F08E323170291EC00855843 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F08E322170291EC00855843 /* MapKit.framework */; };
 		2FDA372916F0133D00EAE1D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDA372816F0133D00EAE1D6 /* UIKit.framework */; };
 		2FDA372B16F0133D00EAE1D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDA372A16F0133D00EAE1D6 /* Foundation.framework */; };
 		2FDA372D16F0133D00EAE1D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FDA372C16F0133D00EAE1D6 /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F08E322170291EC00855843 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2FDA372516F0133D00EAE1D6 /* Whereami.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whereami.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FDA372816F0133D00EAE1D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FDA372A16F0133D00EAE1D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F08E323170291EC00855843 /* MapKit.framework in Frameworks */,
 				2FDA374F16F0146300EAE1D6 /* CoreLocation.framework in Frameworks */,
 				2FDA372916F0133D00EAE1D6 /* UIKit.framework in Frameworks */,
 				2FDA372B16F0133D00EAE1D6 /* Foundation.framework in Frameworks */,
@@ -61,6 +64,7 @@
 		2FDA371C16F0133D00EAE1D6 = {
 			isa = PBXGroup;
 			children = (
+				2F08E322170291EC00855843 /* MapKit.framework */,
 				2FDA374E16F0146300EAE1D6 /* CoreLocation.framework */,
 				2FDA372E16F0133D00EAE1D6 /* Whereami */,
 				2FDA372716F0133D00EAE1D6 /* Frameworks */,
@@ -317,6 +321,7 @@
 				2FDA374D16F0133E00EAE1D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
