@@ -10,13 +10,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface WhereamiViewController : UIViewController<CLLocationManagerDelegate>
+@interface WhereamiViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate>
 {
     CLLocationManager *locationManager;
     
-    IBOutlet MKMapView *worldView;
-    IBOutlet UIActivityIndicatorView *activityIndicator;
-    IBOutlet UITextField *locationTitleField;
+    __weak IBOutlet MKMapView *worldView;
+    __weak IBOutlet UIActivityIndicatorView *activityIndicator;
+    __weak IBOutlet UITextField *locationTitleField;
 }
 
 

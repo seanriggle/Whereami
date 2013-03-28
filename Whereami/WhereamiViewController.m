@@ -7,8 +7,12 @@
 //
 
 #import "WhereamiViewController.h"
+#import "BNRMapPoint.h"
 
 @implementation WhereamiViewController
+{
+    CLLocationCoordinate2D loc;
+}
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,11 +27,37 @@
         //regardless of how much time/power it takes
         [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
         
-        //tell out manager to start looking for its location immediately
-        [locationManager startUpdatingLocation];
     }
     return self;
 }
+
+- (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    //here now have to do zoom
+   // CLLocationCoordinate2D loc;
+    MKCoordinateRegion region;
+    
+    loc = [userLocation coordinate];
+    
+    region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
+    [worldView setRegion:region animated:YES];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    
+    BNRMapPoint *pt = [[BNRMapPoint alloc]
+                       initWithCoordinate:loc title:[locationTitleField text]];
+    
+    [worldView addAnnotation:pt];
+    
+    return YES;
+}
+/*
+- (void) viewDidLoad {
+    [worldView setShowsUserLocation:YES];
+}
+ */
 
 - (void) dealloc
 {
